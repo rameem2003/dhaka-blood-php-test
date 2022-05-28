@@ -40,14 +40,14 @@ header .container{
     justify-content: space-between;
 }
 header .logo{
-    width: 40%;
+    width: 30%;
 }
 header .logo img{
-    width: 12%;
+    width: 20%;
 }
 
 header nav{
-    width: 60%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,13 +142,17 @@ header nav ul li a{
 #login{
     width: 350px;
     padding: 20px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
 }
 
 #register{
     width: 800px;
     padding: 20px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
 }
 
 #register .flex{
@@ -172,21 +176,42 @@ header nav ul li a{
     width: 100%;
     height: 50px;
     padding: 0 20px;
-    margin-top: 18px;
+    margin-bottom: 18px;
     outline: none;
     font-size: 18px;
 }
 
 #login input[type="submit"]{
-    width: 40%;
+    width: 100%;
+    margin: 20px 0;
     font-weight: bold;
     cursor: pointer;
+    background-color: blue;
+    color: white;
+    outline: none;
+    border: 0;
+    transition: 0.5s;
+}
+
+#login input[type="submit"]:hover{
+    background-color: rgb(4, 4, 139);
 }
 
 #register input[type="submit"]{
+    margin: 20px auto;
+    display: block;
     width: 20%;
     font-weight: bold;
     cursor: pointer;
+    background-color: blue;
+    color: white;
+    outline: none;
+    border: 0;
+    transition: 0.5s;
+}
+
+#register input[type="submit"]:hover{
+    background-color: rgb(4, 4, 139);
 }
 
 #register select{
@@ -203,9 +228,14 @@ header nav ul li a{
 .password i{
     color: black;
     position: absolute;
-    top: 63%;
+    top: 35%;
     right: 20px;
-    transform: translateY(-63%);
+    transform: translateY(-35%);
     cursor: pointer;
 }
 /* login , register end */
+
+
+
+/* responsive */
+/* responsive end */
