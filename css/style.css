@@ -203,9 +203,9 @@ header nav ul li a{
 .password i{
     color: black;
     position: absolute;
-    top: 50%;
+    top: 63%;
     right: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-63%);
     cursor: pointer;
 }
 /* login , register end */
