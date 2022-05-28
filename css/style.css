@@ -194,4 +194,18 @@ header nav ul li a{
     height: 50px;
     font-size: 18px;
 }
+
+
+.password{
+    position: relative;
+}
+
+.password i{
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
 /* login , register end */

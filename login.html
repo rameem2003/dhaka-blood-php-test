@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         body{
             display: flex;
@@ -30,7 +32,11 @@
 
         <form action="" method="post">
             <input type="email" name="email" id="" placeholder="Enter email....." required autocomplete="off">
-            <input type="password" name="password" id="" placeholder="Enter password...." required>
+
+            <div class="password">
+                <input type="password" name="password" id="pass" placeholder="Enter password...." required>
+                <i class="fa-solid fa-eye tog"></i>
+            </div>
 
             <input type="submit" name="login" value="Login">
 
@@ -40,6 +46,27 @@
         </form>
     </section>
     <!-- login end -->
+
+
+
+    <!-- js -->
+    <script>
+        const tog = document.querySelector(".tog")
+
+        tog.addEventListener("click", () => {
+            const pass = document.getElementById("pass")
+
+
+            if(pass.type === "password"){
+                pass.type = "text";
+                tog.classList.replace("fa-eye", "fa-eye-slash");
+            }else{
+                pass.type = "password";
+                tog.classList.replace("fa-eye-slash", "fa-eye")
+            }
+        })
+    </script>
+    <!-- js end -->
 
 </body>
 </html>
