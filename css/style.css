@@ -44,6 +44,7 @@ header{
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 9999;
 }
 
 header .container{
@@ -221,6 +222,23 @@ header nav ul li a{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+#members .members-box .profile .pro-avater .blood{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    color: black;
+    border: 3px solid red;
+    border-radius: 50%;
+    font-weight: bolder;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #members .members-box .profile .pro-avater img{
@@ -256,10 +274,34 @@ header nav ul li a{
     color: white;
 }
 
+#members .members-box .profile:hover .blood{
+    color: black;
+}
+
 #members .members-box .profile .link ul li a:hover{
     background-color: red;
 }
 /* members end */
+
+
+
+/* footer */
+footer{
+    background-color: black;
+    color: white;
+}
+
+footer .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .row .box{
+    width: 33%;
+}
+/* footer end */
 
 
 /* login , rehgister */
