@@ -23,6 +23,18 @@ h1{
     font-size: 15px;
 }
 
+.center{
+    text-align: center;
+}
+
+.left{
+    width: 50%;
+}
+
+.right{
+    width: 50%;
+}
+
 
 /* header */
 header{
@@ -74,14 +86,19 @@ header nav ul li a{
 /* banner */
 #banner{
     margin-top: 90px;
+    background-image: url('https://www.tbsnews.net/sites/default/files/styles/big_2/public/images/2021/06/14/blood_donate.jpg?itok=VZm5p8vE&timestamp=1623642374');
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#banner .blur{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: url('https://www.tbsnews.net/sites/default/files/styles/big_2/public/images/2021/06/14/blood_donate.jpg?itok=VZm5p8vE&timestamp=1623642374');
-    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 #banner h1{
     color: white;
@@ -116,10 +133,11 @@ header nav ul li a{
 #about{
     margin: 30px 0;
 }
-#about .card-box{
+#about .card-box, #about .description{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 30px 0;
 }
 
 #about .card-box .card{
@@ -134,8 +152,114 @@ header nav ul li a{
 #about .card-box .card .card-text{
     padding: 20px;
 }
+
+#about .description .left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#about .description .left img{
+    width: 50%;
+}
 /* about end */
 
+
+/* benefit */
+#benefit{
+    margin: 30px 0;
+    background-color: #ddd;
+}
+
+#benefit .list{
+    display: flex;
+}
+
+#benefit .left ol li{
+    margin: 30px 0;
+}
+
+#benefit .right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#benefit .right img{
+    width: 70%;
+}
+/* benefit end */
+
+
+/* members */
+#members{
+    margin: 30px 0;
+}
+
+#members .members-box{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#members .members-box .profile{
+    width: 25%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#members .members-box .profile .pro-avater{
+    height: 240px;
+    width: 240px;
+    border: 5px solid red;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#members .members-box .profile .pro-avater img{
+    width: 95%;
+}
+
+#members .members-box .profile .pro-name{
+    margin-top: 20px;
+    font-weight: bolder;
+}
+#members .members-box .profile .link{
+    margin-top: 20px;
+}
+#members .members-box .profile .link ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#members .members-box .profile .link ul li a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+
+#members .members-box .profile:hover{
+    background-color: rgb(19, 69, 233);
+    color: white;
+}
+
+#members .members-box .profile .link ul li a:hover{
+    background-color: red;
+}
+/* members end */
 
 
 /* login , rehgister */
