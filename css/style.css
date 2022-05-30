@@ -169,7 +169,8 @@ header nav ul li a{
 /* benefit */
 #benefit{
     margin: 30px 0;
-    background-color: #ddd;
+    background-color: rgb(0, 102, 255);
+    color: white;
 }
 
 #benefit .list{
@@ -345,6 +346,20 @@ footer .row .box .flex .left{
 footer .row .box .flex .right{
     width: 90%;
 }
+
+
+footer .row .box .flex .img{
+    width: 40%;
+}
+
+footer .row .box .flex .img img{
+    width: 72%;
+}
+
+footer .row .box .flex .des{
+    width: 60%;
+}
+
 /* footer end */
 
 
