@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 
     <!-- local css -->
     <link rel="stylesheet" href="./css/style.css">
@@ -26,7 +27,7 @@
     </style>
 </head>
 <body>
-    <!-- login -->
+    <!-- registration -->
     <section id="register">
         <h1 class="title">Register</h1>
 
@@ -42,11 +43,17 @@
     
                     <label for="uname">User name</label>
                     <input type="text" name="uname" id="uname" required>
+
+                    <label for="dob">Date of birth</label>
+                    <input type="date" name="dob" id="dob" required>
                 </div>
 
                 <div class="middle">
-                    <label for="dob">Date of birth</label>
-                    <input type="date" name="dob" id="dob" required>
+                    <label for="loc">Location</label>
+                    <input type="text" name="loc" id="loc" required>
+
+                    <label for="last_blood">Last blood donate date</label>
+                    <input type="date" name="last_blood" id="last_blood" required>
     
                     <label for="blood">Blood group</label>
                     <select name="blood" id="blood" required>
@@ -85,7 +92,7 @@
             <p><a href="./index.html">Back to home</a></p>
         </form>
     </section>
-    <!-- login end -->
+    <!-- registration end -->
 
 
     <!-- js -->

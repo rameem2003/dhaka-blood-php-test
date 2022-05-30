@@ -374,7 +374,7 @@ footer .row .box .flex .des{
 
 #register{
     width: 800px;
-    padding: 20px;
+    padding: 15px;
     /* background-color: antiquewhite; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     border-radius: 8px;
@@ -424,6 +424,7 @@ footer .row .box .flex .des{
 
 #register input[type="submit"]{
     margin: 20px auto;
+    margin-bottom: 0px;
     display: block;
     width: 20%;
     font-weight: bold;
@@ -462,5 +463,48 @@ footer .row .box .flex .des{
 
 
 
+
+
 /* responsive */
+@media screen and (max-width:500px) {
+    .container{
+        width: 100%;
+    }
+    h1{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #banner p{
+        margin: 0 auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    #banner a{
+        display: block;
+        margin: 20px auto;
+        width: 40%;
+        text-align: center;
+    }
+
+
+    #about .card-box{
+        display: block;
+    }
+    #about .card-box .card{
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    #about .description{
+        display: block;
+    }
+
+    #about .description .left,
+    #about .description .right{
+        width: 90%;
+        margin: 20px auto;
+    }
+}
 /* responsive end */
