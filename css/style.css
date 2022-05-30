@@ -54,6 +54,27 @@ header .container{
 }
 header .logo{
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo button{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    display: none;
+}
+
+header .logo i{
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+header .logo button:focus{
+    border: 2px solid black;
 }
 header .logo img{
     width: 20%;
@@ -246,9 +267,17 @@ header nav ul li a{
     width: 95%;
 }
 
-#members .members-box .profile .pro-name{
+#members .members-box .profile .pro-name h4{
     margin-top: 20px;
+    font-size: 40px;
     font-weight: bolder;
+}
+
+#members .members-box .profile .location-blood-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
 }
 #members .members-box .profile .link{
     margin-top: 20px;
@@ -468,12 +497,48 @@ footer .row .box .flex .des{
 /* responsive */
 @media screen and (max-width:500px) {
     .container{
-        width: 100%;
+        width: 95%;
     }
     h1{
         font-size: 30px;
         text-align: center;
     }
+
+    header .container{
+        display: block;
+    }
+
+    header .logo{
+        width: 100%;
+    }
+
+    header .logo button{
+        display: initial;
+    }
+
+
+    header nav{
+        width: 100%;
+        height: 0px;
+        opacity: 0;
+        transition: height 0.5s;
+    }
+    
+    header nav.active{
+        height: 400px;
+        opacity: 1;
+    }
+
+    header nav ul{
+        display: block;
+        text-align: center;
+    }
+
+    header nav ul li{
+        margin: 30px 0;
+    }
+
+
 
     #banner p{
         margin: 0 auto;
@@ -505,6 +570,52 @@ footer .row .box .flex .des{
     #about .description .right{
         width: 90%;
         margin: 20px auto;
+    }
+
+    #about .description .right p{
+        text-align: center;
+    }
+
+
+    #benefit .list{
+        display: block;
+    }
+
+    #benefit .list .left, #benefit .list .right{
+        width: 90%;
+        margin: 20px auto;
+    }
+
+
+    #members .members-box{
+        display: block;
+    }
+
+    #members .members-box .profile{
+        width: 80%;
+        margin: 20px auto;
+    }
+
+
+    footer .row{
+        display: block;
+    }
+
+    footer .row .box{
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    footer .row .box .link-text{
+        text-align: center;
+    }
+
+    footer .row .box ul{
+        justify-content: center;
+    }
+
+    footer .row .box ul li{
+        margin: 0 auto;
     }
 }
 /* responsive end */

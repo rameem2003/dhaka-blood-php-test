@@ -23,15 +23,17 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="./img/logo.png" alt="logo">
+                <a href="./index.html">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
 
-                
+                <button id="tog_menu"><i class="fa-solid fa-bars-staggered"></i></button>                
             </div>
-            <nav>
+            <nav id="menu">
                 <ul>
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Our volunteers</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#members">Our volunteers</a></li>
                     <li><a href="./register.html">Join us</a></li>
                     <li><a href="./login.html">Login</a></li>
                 </ul>
@@ -154,11 +156,12 @@
                     </div>
 
                     <div class="pro-name">
-                        <h2>Jhon</h2>
+                        <h4>Jhon</h4>
                     </div>
 
-                    <div class="location">
-                        <p>Dhaka</p>
+                    <div class="location-blood-date">
+                        <p><i class="fa-solid fa-location-dot"></i> Dhaka</p>
+                        <p><i class="fa-solid fa-droplet"></i> 01/01/2000</p>
                     </div>
 
                     <div class="link">
@@ -166,6 +169,8 @@
                             <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
 
                             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+
+                            <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -204,7 +209,7 @@
                 </div>
 
                 <div class="box">
-                    <p>Let's Connect</p>
+                    <p class="link-text">Let's Connect</p>
                     <ul>
                         <li><a href=""><i class="fa-brands fa-facebook-square"></i></a></li>
                         <li><a href=""><i class="fa-brands fa-twitter-square"></i></a></li>
@@ -236,5 +241,9 @@
         </div>
     </footer>
     <!-- footer end -->
+
+
+    <!-- local js -->
+    <script src="./js/main.js"></script>
 </body>
 </html>
