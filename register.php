@@ -1,3 +1,42 @@
+<?php 
+
+    include './include/configuration.php';
+
+    if(isset($_POST['register'])){
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $uname = $_POST["uname"];
+        $dob = $_POST["dob"];
+        $loc = $_POST["loc"];
+        $last_blood = $_POST["last_blood"];
+        $blood = $_POST["blood"];
+        $phone = $_POST["phone"];
+        $email = $_POST["email"];
+        $pass = $_POST["pass"];
+        $cpass = $_POST["cpass"];
+
+        $image = $_FILES['image']['name'];
+        $image_tmp_name = $_FILES['image']['tmp_name'];
+        $image_folder = 'upload_img/'.$image;
+
+        $insert_data = "INSERT INTO `donors` (f_name, l_name, u_name, dob, location, donate_date, blood, photo, phone, email, password) VALUES('$fname', '$lname', '$uname', '$dob', '$loc', '$last_blood', '$blood', '$image', '$phone', '$email', '$pass')";
+
+
+        // mysqli_query($conn, $insert_data);
+
+        move_uploaded_file($image_tmp_name, $image_folder);
+
+
+        if(mysqli_query($conn, $insert_data)){
+            $msg[] = "Registration Successfull";
+        }else{
+            $msg[] = "Registration error";   
+        }
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +57,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body{
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
         }
     </style>
 </head>
@@ -31,7 +74,17 @@
     <section id="register">
         <h1 class="title">Register</h1>
 
-        <form action="" method="post">
+        <?php 
+        
+            if(isset($msg)){
+                foreach($msg as $msg){
+                    echo '<div class="msg">' . $msg . '</div>';
+                }
+            }
+        
+        ?>
+
+        <form action="" method="post" enctype="multipart/form-data">
 
             <div class="flex">
                 <div class="left">
@@ -66,15 +119,22 @@
                         <option value="O+">O+</option>
                         <option value="O-">O-</option>
                     </select>
+
+                    <label for="img">Upload photo</label>
+                    <input type="file" name="image" id="" accept="image/jpeg, image/png, image/jpg">
                 </div>
     
                 <div class="right">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" required>
+
+
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" required>
     
                     <label for="pass">Create Password</label>
                     <div class="password">
-                        <input type="password" name="password" id="pass" placeholder="" required>
+                        <input type="password" name="pass" id="pass" placeholder="" required>
                         <i class="fa-solid fa-eye tog"></i>
                     </div>
     
@@ -87,7 +147,7 @@
 
             <input type="submit" name="register" value="Register">
 
-            <p>Haven't any account <a href="./login.html">Login now</a></p>
+            <p>Haven't any account <a href="./login.php">Login now</a></p>
 
             <p><a href="./index.html">Back to home</a></p>
         </form>
