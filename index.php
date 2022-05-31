@@ -148,32 +148,63 @@
             <h1 class="title center">Our Volunteers</h1>
 
             <div class="members-box">
-                <div class="profile">
-                    <div class="pro-avater">
-                        <img src="./img/profile.png" alt="">
 
-                        <div class="blood">A+</div>
-                    </div>
 
-                    <div class="pro-name">
-                        <h4>Jhon</h4>
-                    </div>
+            <?php 
 
-                    <div class="location-blood-date">
-                        <p><i class="fa-solid fa-location-dot"></i> Dhaka</p>
-                        <p><i class="fa-solid fa-droplet"></i> 01/01/2000</p>
-                    </div>
 
-                    <div class="link">
-                        <ul>
-                            <li><a href="#"><i class="fa-solid fa-phone"></i></a></li>
+                include './include/configuration.php';
 
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                $load_card_query = "SELECT * FROM `donors`";
 
-                            <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                $run = mysqli_query($conn, $load_card_query);
+
+                if(mysqli_num_rows($run) > 0){
+                    while($row = mysqli_fetch_assoc($run)){
+
+                        ?>
+
+                            <div class="profile">
+                                <div class="pro-avater">
+                                    <img src="<?php echo './upload_img/'.$row['photo']; ?>" alt="">
+
+                                    <div class="blood"><?php echo $row['blood'] ?></div>
+                                </div>
+
+                                <div class="pro-name">
+                                    <h4><?php echo $row['f_name'] . " " . $row['l_name']; ?></h4>
+                                </div>
+
+                                <div class="location-blood-date">
+                                    <p><i class="fa-solid fa-location-dot"></i> <?php echo $row['location'] ?></p>
+                                    <p><i class="fa-solid fa-droplet"></i> <?php echo $row['donate_date'] ?></p>
+                                </div>
+
+                                <div class="link">
+                                    <ul>
+                                        <li><a href="tel: <?php echo $row['phone'] ?>"><i class="fa-solid fa-phone"></i></a></li>
+
+                                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+
+                                        <li><a href="mailto: <?php echo $row['email'] ?>"><i class="fa-solid fa-envelope"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                    <?php
+
+
+                    }
+                }else{
+                    echo "NO DATA FOUND";
+                }
+
+
+
+
+            ?>
+
             </div>
         </div>
     </div>

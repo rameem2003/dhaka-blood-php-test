@@ -149,7 +149,7 @@
 
             <p>Haven't any account <a href="./login.php">Login now</a></p>
 
-            <p><a href="./index.html">Back to home</a></p>
+            <p><a href="./index.php">Back to home</a></p>
         </form>
     </section>
     <!-- registration end -->

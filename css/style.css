@@ -35,6 +35,14 @@ h1{
     width: 50%;
 }
 
+.msg{
+    width: 100%;
+    background-color: #F5C2C7;
+    color: #842029;
+    padding: 10px;
+    border-radius: 8px;
+}
+
 
 /* header */
 header{
@@ -264,12 +272,14 @@ header nav ul li a{
 }
 
 #members .members-box .profile .pro-avater img{
-    width: 95%;
+    height: 210px;
+    width: 210px;
+    border-radius: 50%;
 }
 
 #members .members-box .profile .pro-name h4{
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bolder;
 }
 

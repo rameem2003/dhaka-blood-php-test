@@ -1,3 +1,31 @@
+<?php 
+
+    include './include/configuration.php';
+
+    session_start();
+    if(isset($_POST['login'])){
+        $input_email = $_POST["email"];
+        $input_pass = $_POST["pass"];
+
+
+        $login_query = "SELECT * FROM `donors` WHERE email = '$input_email' AND password = '$input_pass'";
+        $run = mysqli_query($conn, $login_query);
+
+        if(mysqli_num_rows($run) > 0){
+            $row = mysqli_fetch_assoc($run);
+            $_SESSION['user_id'] = $row['id'];
+            header("location:profile.php");
+        }
+        else{
+            $msg[] = "Email or password are invalid!!!";
+        }
+    }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,12 +58,22 @@
     <!-- login -->
     <section id="login">
         <h1 class="title">Login Here</h1>
+        
+        <?php 
+        
+            if(isset($msg)){
+                foreach($msg as $msg){
+                    echo '<div class="msg">' . $msg . '</div>';
+                }
+            }
+        
+        ?>
 
         <form action="" method="post">
             <input type="email" name="email" id="" placeholder="Enter email....." required autocomplete="off">
 
             <div class="password">
-                <input type="password" name="password" id="pass" placeholder="Enter password...." required>
+                <input type="password" name="pass" id="pass" placeholder="Enter password...." required>
                 <i class="fa-solid fa-eye tog"></i>
             </div>
 
@@ -43,7 +81,7 @@
 
             <p>Haven't any account <a href="./register.php">Register now</a></p>
 
-            <p><a href="./index.html">Back to home</a></p>
+            <p><a href="./index.php">Back to home</a></p>
         </form>
     </section>
     <!-- login end -->
