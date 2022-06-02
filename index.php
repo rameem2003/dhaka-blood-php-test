@@ -184,7 +184,7 @@
                                     <ul>
                                         <li><a href="tel: <?php echo $row['phone'] ?>"><i class="fa-solid fa-phone"></i></a></li>
 
-                                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                        <li><a href="<?php echo $row['fb'] ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
 
                                         <li><a href="mailto: <?php echo $row['email'] ?>"><i class="fa-solid fa-envelope"></i></a></li>
                                     </ul>

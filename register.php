@@ -11,6 +11,7 @@
         $last_blood = $_POST["last_blood"];
         $blood = $_POST["blood"];
         $phone = $_POST["phone"];
+        $fb = $_POST["fb"];
         $email = $_POST["email"];
         $pass = $_POST["pass"];
         $cpass = $_POST["cpass"];
@@ -19,7 +20,7 @@
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_folder = 'upload_img/'.$image;
 
-        $insert_data = "INSERT INTO `donors` (f_name, l_name, u_name, dob, location, donate_date, blood, photo, phone, email, password) VALUES('$fname', '$lname', '$uname', '$dob', '$loc', '$last_blood', '$blood', '$image', '$phone', '$email', '$pass')";
+        $insert_data = "INSERT INTO `donors` (f_name, l_name, u_name, dob, location, donate_date, blood, photo, phone, fb, email, password) VALUES('$fname', '$lname', '$uname', '$dob', '$loc', '$last_blood', '$blood', '$image', '$phone', '$fb', '$email', '$pass')";
 
 
         // mysqli_query($conn, $insert_data);
@@ -100,11 +101,12 @@
 
                     <label for="dob">Date of birth</label>
                     <input type="date" name="dob" id="dob" required>
+
+                    <label for="loc">Location</label>
+                    <input type="text" name="loc" id="loc" required>
                 </div>
 
                 <div class="middle">
-                    <label for="loc">Location</label>
-                    <input type="text" name="loc" id="loc" required>
 
                     <label for="last_blood">Last blood donate date</label>
                     <input type="date" name="last_blood" id="last_blood" required>
@@ -123,12 +125,15 @@
 
                     <label for="img">Upload photo</label>
                     <input type="file" name="image" id="" accept="image/jpeg, image/png, image/jpg">
+
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" required>
                 </div>
     
                 <div class="right">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" required>
-
+                    
+                    <label for="fb">Facebook link</label>
+                    <input type="text" name="fb" id="fb" required>
 
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" required>

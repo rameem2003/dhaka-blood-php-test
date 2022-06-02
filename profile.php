@@ -89,6 +89,9 @@
                     <label for="phone">Phone: <?php echo $row['phone'] ?></label>
 
 
+                    <label for="phone">Facebook link: <a href="<?php echo $row['fb'] ?>"><?php echo $row['fb'] ?></a></label>
+
+
                     <label for="email">Email: <?php echo $row['email'] ?></label>
                 </div>
             </div>

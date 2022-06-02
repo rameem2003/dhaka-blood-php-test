@@ -25,6 +25,7 @@
         $update_last_blood = $_POST['last_blood'];
         $update_blood = $_POST['blood'];
         $update_phone = $_POST['phone'];
+        $update_fb = $_POST['fb'];
         $update_email = $_POST['email'];
         $old_pass = $_POST['old_pass'];
         $old_input_pass = $_POST['old_input_pass'];
@@ -33,7 +34,7 @@
         if($old_pass != $old_input_pass){
             $msg[] = "Old password not matched!";
         }else{
-            $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', phone = '$update_phone', password = '$new_pass' WHERE id = '$user_id'";
+            $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
 
             mysqli_query($conn, $update_qurey);
         }
@@ -129,6 +130,9 @@
 
                     <label for="phone">Phone:</label>
                     <input type="text" name="phone" id="phone" value="<?php echo $row['phone'] ?>">
+
+                    <label for="fb">Facebook link:</label>
+                    <input type="text" name="fb" id="fb" value="<?php echo $row['fb'] ?>">
 
 
                     <label for="email">Email:</label>

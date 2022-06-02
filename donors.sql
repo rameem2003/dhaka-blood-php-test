@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2022 at 11:30 AM
+-- Generation Time: Jun 02, 2022 at 06:05 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -35,9 +35,10 @@ CREATE TABLE `donors` (
   `dob` date NOT NULL,
   `location` varchar(255) NOT NULL,
   `donate_date` date NOT NULL,
-  `blood` varchar(10) NOT NULL,
+  `blood` varchar(5) NOT NULL,
   `photo` varchar(255) NOT NULL,
   `phone` varchar(11) NOT NULL,
+  `fb` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -46,10 +47,8 @@ CREATE TABLE `donors` (
 -- Dumping data for table `donors`
 --
 
-INSERT INTO `donors` (`id`, `f_name`, `l_name`, `u_name`, `dob`, `location`, `donate_date`, `blood`, `photo`, `phone`, `email`, `password`) VALUES
-(11, 'MH', 'Rameem', 'rameem2003', '2003-11-04', 'Mirpur, Dhaka', '2022-05-31', 'A+', 'MAHMOOD HASSAN RAMEEM 1.jpg', '01409029641', 'rameem2019@gmail.com', '588242'),
-(12, 'Mahabul', 'Alam', 'alam20', '2003-11-04', 'Mirpur, Dhaka', '2022-05-31', 'A+', 'ammajan_ammajan.jpg', '0150489489', 'mahabul1324@gmail.com', '123'),
-(16, 'erhhaeraerheteath', 'eathethe', 'eathaer', '2000-11-01', 'erger', '2022-05-31', 'B-', 'khola_janala_tahsin.jpg', '5959555', 'jahidalamriad@gmail.com', '123');
+INSERT INTO `donors` (`id`, `f_name`, `l_name`, `u_name`, `dob`, `location`, `donate_date`, `blood`, `photo`, `phone`, `fb`, `email`, `password`) VALUES
+(2, 'MH', 'Rameem', 'rameem2003', '2003-11-04', 'Mirpur, Dhaka', '2022-06-02', 'A+', 'me.jpg', '01409029641', 'https://www.facebook.com/mahmood.rameem/', 'rameem2019@gmail.com', '588242');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +68,7 @@ ALTER TABLE `donors`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
