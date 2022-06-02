@@ -287,7 +287,11 @@ header nav ul li a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
+    /* font-size: 15px; */
+}
+
+#members .members-box .profile .location-blood-datep{
+    font-size: 15px;
 }
 #members .members-box .profile .link{
     margin-top: 20px;
