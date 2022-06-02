@@ -96,7 +96,7 @@
 
             <div class="btn">
                 <a id="logout" name="logout" href="profile.php?logout=<?php echo $user_id; ?>">Logout</a>
-                <input type="submit" id="edit" name="edit" value="Edit">
+                <a id="edit" href="./update_profile.php">Edit</a>
             </div>
 
         </form>
