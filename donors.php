@@ -17,6 +17,12 @@
 
     <!-- fontawesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        #banner .blur{
+            height: 50vh;
+        }
+    </style>
 </head>
 <body>
     <!-- header -->
@@ -46,100 +52,11 @@
     <section id="banner">
         <div class="blur">
             <div class="container">
-                <h1>Donate Blood To Save Life</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas quia nihil hic repellat. Iure numquam fugiat libero hic</p>
-    
-                <a href="./register.php">Join Now</a>
+                <h1>Let's see our members</h1>
             </div>
         </div>
     </section>
     <!-- banner end -->
-
-
-    <!-- about -->
-    <section id="about">
-        <div class="container">
-            <div class="card-box">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/blood_1.jpg" alt="">
-                    </div>
-                    <div class="card-text">
-                        <h1 class="title">Become a Donor</h1>
-                        <p class="sub-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rerum dolor in maxime dolorum voluptatem. Harum unde quod itaque deserunt suscipit</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/blood_2.jpg" alt="">
-                    </div>
-                    <div class="card-text">
-                        <h1 class="title">Why give blood</h1>
-                        <p class="sub-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rerum dolor in maxime dolorum voluptatem. Harum unde quod itaque deserunt suscipit</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/blood_3.jpg" alt="">
-                    </div>
-                    <div class="card-text">
-                        <h1 class="title">Donation Helps</h1>
-                        <p class="sub-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rerum dolor in maxime dolorum voluptatem. Harum unde quod itaque deserunt suscipit</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="description">
-                <div class="left">
-                    <img src="./img/blood_community.png" alt="">
-                </div>
-                <div class="right">
-                    <h1 class="title">We are Blood Donor Group</h1>
-
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab explicabo, et illo, odio necessitatibus, labore voluptatum nihil nam doloribus amet suscipit quam perferendis laboriosam! Ratione, vel? Quo iste sint cupiditate dolore blanditiis eaque, explicabo a.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- about end -->
-
-
-    <!-- benefit -->
-    <section id="benefit">
-        <div class="container">
-            <div class="list">
-                <div class="left">
-                    <h1 class="title">Why You Donate Blood</h1>
-
-                    <ol>
-                        <li>
-                            <h4>Reduce risk of heart attacks and liver cilment</h4>
-
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere dolore ea assumenda dolores, animi ducimus!</p>
-                        </li>
-
-                        <li>
-                            <h4>Lower the risk of cancer</h4>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis veritatis, laborum laudantium assumenda quasi ipsam.</p>
-                        </li>
-
-                        <li>
-                            <h4>Speeds up healing process</h4>
-
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, facere. Sint in at aperiam nihil!</p>
-                        </li>
-                    </ol>
-                </div>
-                <div class="right">
-                    <img src="./img/blood.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- benefit end -->
 
 
     <!-- members -->
