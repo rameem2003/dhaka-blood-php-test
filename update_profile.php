@@ -19,7 +19,6 @@
     if(isset($_POST['update'])){
         $update_fname = $_POST['fname'];
         $update_lname = $_POST['lname'];
-        // $update_uname = $_POST['uname'];
         $update_dob = $_POST['dob'];
         $update_loc = $_POST['loc'];
         $update_last_blood = $_POST['last_blood'];
@@ -35,16 +34,34 @@
         $update_image = $_FILES['image']['name'];
         $update_image_tmp_name = $_FILES['image']['tmp_name'];
         $image_folder = 'upload_img/'.$update_image;
+        $old_photo = $_POST['old_photo'];
 
         if($old_pass != $old_input_pass){
             $msg[] = "Old password not matched!";
-        }else{
+        }
+
+        elseif($update_image == ""){
+            $update_image = $old_photo;
+
             $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', photo = '$update_image', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
 
             mysqli_query($conn, $update_qurey);
 
             move_uploaded_file($update_image_tmp_name, $image_folder);
+
+            $msg[] = "Update successfull";
         }
+        
+        else{
+            $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', photo = '$update_image', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
+
+            mysqli_query($conn, $update_qurey);
+
+            move_uploaded_file($update_image_tmp_name, $image_folder);
+
+            $msg[] = "Update successfull";
+        }
+
         
     }
 
@@ -111,7 +128,8 @@
             ?>
             <div class="flex">
                 <div class="left">
-                    <img src="<?php echo './upload_img/'.$row['photo']; ?>" alt="">
+                    <img name="profile_img" src="<?php  echo './upload_img/'.$row['photo']; ?>" alt="">
+
                 </div>
 
                 <div class="right">
@@ -137,8 +155,12 @@
 
 
                     <label for="img">Upload photo</label>
-                    <input type="file" name="image" id="" accept="image/jpeg, image/png, image/jpg">
+                    <input type="file" value="<?php echo $row['photo'] ?>" name="image" id="" accept="image/jpeg, image/png, image/jpg">
 
+                    <input type="hidden" name="old_photo" value="<?php echo $row['photo'] ?>">
+
+
+                    
                     <label for="phone">Phone:</label>
                     <input type="text" name="phone" id="phone" value="<?php echo $row['phone'] ?>">
 
@@ -152,19 +174,19 @@
 
                     <label for="old_input_pass">Old Password</label>
                     <div class="password">
-                        <input type="password" name="old_input_pass" id="old_pass" placeholder="" required>
+                        <input type="password" name="old_input_pass" id="old_pass" placeholder="">
                         <input type="hidden" name="old_pass" id="" value="<?php echo $row['password'] ?>">
                     </div>
 
 
                     <label for="pass">Create Password</label>
                     <div class="password">
-                        <input type="password" name="pass" id="pass" placeholder="" required>
+                        <input type="password" name="pass" id="pass" placeholder="">
                         <i class="fa-solid fa-eye tog"></i>
                     </div>
     
                     <label for="cpass">Confirm Password</label>
-                    <input type="password" name="cpass" id="cpass" required>
+                    <input type="password" name="cpass" id="cpass">
                     <p id="validate"></p>
                 </div>
             </div>
@@ -202,11 +224,15 @@
         
         cpass.addEventListener("keyup", () => {
             const pass = document.getElementById("pass");
+            const update_btn = document.getElementById("update");
+
             const validate = document.getElementById("validate")
             if(pass.value == cpass.value){
                 validate.innerHTML = "";
+                update_btn.style.display = "block";
             }else{
                 validate.innerHTML = "Password not matching!!";
+                update_btn.style.display = "none";
             }
 
         })
