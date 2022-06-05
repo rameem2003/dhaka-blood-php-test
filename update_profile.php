@@ -42,17 +42,36 @@
 
         elseif($update_image == ""){
             $update_image = $old_photo;
+            
 
-            $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', photo = '$update_image', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
 
-            mysqli_query($conn, $update_qurey);
+            if($new_pass == ""){
+                $new_pass = $old_pass;
 
-            move_uploaded_file($update_image_tmp_name, $image_folder);
+                $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', photo = '$update_image', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
+
+                mysqli_query($conn, $update_qurey);
+
+                move_uploaded_file($update_image_tmp_name, $image_folder);
+            }
+            else{
+                $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', photo = '$update_image', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
+
+                mysqli_query($conn, $update_qurey);
+
+                move_uploaded_file($update_image_tmp_name, $image_folder);
+            }
 
             $msg[] = "Update successfull";
         }
+
         
         else{
+            if($new_pass == ""){
+                $new_pass = $old_pass;
+            }
+
+
             $update_qurey = "UPDATE `donors` SET f_name = '$update_fname', l_name = '$update_lname', dob = '$update_dob', location = '$update_loc', donate_date = '$update_last_blood', blood = '$update_blood', photo = '$update_image', phone = '$update_phone', fb = '$update_fb', email = '$update_email', password = '$new_pass' WHERE id = '$user_id'";
 
             mysqli_query($conn, $update_qurey);

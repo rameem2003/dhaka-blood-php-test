@@ -232,10 +232,12 @@ header nav ul li a{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #members .members-box .profile{
     width: 25%;
+    margin: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
     text-align: center;
     padding: 20px;
