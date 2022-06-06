@@ -23,13 +23,11 @@
         $insert_data = "INSERT INTO `donors` (f_name, l_name, u_name, dob, location, donate_date, blood, photo, phone, fb, email, password) VALUES('$fname', '$lname', '$uname', '$dob', '$loc', '$last_blood', '$blood', '$image', '$phone', '$fb', '$email', '$pass')";
 
 
-        // mysqli_query($conn, $insert_data);
-
         move_uploaded_file($image_tmp_name, $image_folder);
 
 
         if(mysqli_query($conn, $insert_data)){
-            $msg[] = "Registration Successfull";
+            header("location:index.php");
         }else{
             $msg[] = "Registration error";   
         }
