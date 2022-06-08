@@ -47,7 +47,7 @@
         <div class="blur">
             <div class="container">
                 <h1>Donate Blood To Save Life</h1>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas quia nihil hic repellat. Iure numquam fugiat libero hic</p>
+                <p>Blood donation is a work of virtue or reward from the norm. Saving the life of one human being is as great a task as saving the life of the entire human race.</p>
     
                 <a href="./register.php">Join Now</a>
             </div>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="card-text">
                         <h1 class="title">Become a Donor</h1>
-                        <p class="sub-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rerum dolor in maxime dolorum voluptatem. Harum unde quod itaque deserunt suscipit</p>
+                        <p class="sub-title">In developed countries, most of the blood donors are voluntary blood donors who donate blood out of social responsibility.</p>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
                     </div>
                     <div class="card-text">
                         <h1 class="title">Why give blood</h1>
-                        <p class="sub-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rerum dolor in maxime dolorum voluptatem. Harum unde quod itaque deserunt suscipit</p>
+                        <p class="sub-title">Blood donation is extremely beneficial for health. As soon as the blood is donated, the bone marrow in the body is stimulated to produce new cells, and within 2 weeks of the blood donation, new blood cells are born and the deficiency is filled.</p>
                     </div>
                 </div>
 
@@ -86,7 +86,7 @@
                     </div>
                     <div class="card-text">
                         <h1 class="title">Donation Helps</h1>
-                        <p class="sub-title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea rerum dolor in maxime dolorum voluptatem. Harum unde quod itaque deserunt suscipit</p>
+                        <p class="sub-title">Most blood donors donate blood for social work, but some people are professional blood donors, meaning they donate blood for money or an allowance. Again the blood donor can get blood for his future needs.</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,9 @@
                 <div class="right">
                     <h1 class="title">We are Blood Donor Group</h1>
 
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab explicabo, et illo, odio necessitatibus, labore voluptatum nihil nam doloribus amet suscipit quam perferendis laboriosam! Ratione, vel? Quo iste sint cupiditate dolore blanditiis eaque, explicabo a.</p>
+                    <p>There are no people available to donate blood these days "Please let those who wish to donate blood voluntarily! You can help get blood donors by adding your friends. May humanity win</p>
+
+                    <a class="btn" href="https://www.facebook.com/groups/331521442397944" target="_blank">Join our group</a>
                 </div>
             </div>
         </div>
@@ -256,7 +258,7 @@
                         </div>
                         <div class="right des">
                             <h3>Dhaka Blood Bank</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, illum.</p>
+                            <p>A Trusted Blood Donation Community in Bangladesh.</p>
                         </div>
                     </div>
                 </div>
