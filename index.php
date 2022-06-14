@@ -23,7 +23,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="./index.html">
+                <a href="./index.php">
                     <img src="./img/logo.png" alt="logo">
                 </a>
 

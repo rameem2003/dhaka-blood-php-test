@@ -648,12 +648,14 @@ footer .row .box .flex .des{
         width: 100%;
         height: 0px;
         opacity: 0;
+        visibility: hidden;
         transition: height 0.5s;
     }
     
     header nav.active{
         height: 400px;
         opacity: 1;
+        visibility: visible;
     }
 
     header nav ul{
