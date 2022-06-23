@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 22, 2022 at 12:49 AM
+-- Generation Time: Jun 23, 2022 at 03:47 PM
 -- Server version: 10.5.12-MariaDB
 -- PHP Version: 7.3.32
 
@@ -59,7 +59,9 @@ INSERT INTO `donors` (`id`, `f_name`, `l_name`, `u_name`, `dob`, `location`, `do
 (9, 'Junaid', 'islam', 'junaidislam', '2002-02-13', 'brahmanbaria ', '2021-08-15', 'A+', 'inbound1909809449.jpg', '01647865987', 'https://www.facebook.com/profile.php?id=100008579554493', 'mdjunaidislam629@gmail.com ', 'JUnAid.[668'),
 (10, 'Shourav', 'Shahriar ', 'Md. Shourav', '1997-04-03', 'Tangail', '2022-06-21', 'B+', 'inbound812652157.jpg', '01750498023', 'https://www.facebook.com/shourav.mbd', 'Shahriarshourav23@gmail.com', 'shourav'),
 (11, 'Muhaimin', 'Shihab', 'muhaiminshihab', '2001-04-17', 'Dhaka', '2022-06-01', 'AB+', 'photo.jpeg', '01829004863', 'https://facebook.com/muhaiminshihab', 'hostforshihab@gmail.com', 'shihab123'),
-(12, 'Nazmul', 'Islam', 'nazmul101112', '2001-11-07', 'Mirpur-14, Dhaka-1206', '2022-04-28', 'A+', 'inbound6188951507552945778.jpg', '01959061063', 'https://www.facebook.com/nazmulislam101112', 'nazmulislam101112@gmail.com', 'nazmul00');
+(12, 'Nazmul', 'Islam', 'nazmul101112', '2001-11-07', 'Mirpur-14, Dhaka-1206', '2022-04-28', 'A+', 'inbound6188951507552945778.jpg', '01959061063', 'https://www.facebook.com/nazmulislam101112', 'nazmulislam101112@gmail.com', 'nazmul00'),
+(13, 'Musfika', 'Nawar', 'Musfika ', '2001-01-21', 'Dohar Nawabganj ', '2022-06-22', 'O+', '', '01936584342', 'https://www.facebook.com/musfika.nawar', 'musfikanawar14@gmail.com', '27881'),
+(14, 'Sagorika akter ', 'Sadia ', 'Sagorika', '2002-07-01', 'Dhaka, Agargaon ', '2022-05-28', 'O-', '', '01891790483', 'https://www.facebook.com/sagorika.akter.9803', 'sagorikaaktersadia@gmail.com', 'sagorika83');
 
 --
 -- Indexes for dumped tables
@@ -79,7 +81,7 @@ ALTER TABLE `donors`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
