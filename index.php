@@ -75,7 +75,7 @@
                         <img src="./img/blood_2.jpg" alt="">
                     </div>
                     <div class="card-text">
-                        <h1 class="title">Why give blood</h1>
+                        <h1 class="title">Why give blood ?</h1>
                         <p class="sub-title">Blood donation is extremely beneficial for health. As soon as the blood is donated, the bone marrow in the body is stimulated to produce new cells, and within 2 weeks of the blood donation, new blood cells are born and the deficiency is filled.</p>
                     </div>
                 </div>
