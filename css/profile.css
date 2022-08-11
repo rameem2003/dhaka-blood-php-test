@@ -10,7 +10,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 
@@ -51,6 +51,7 @@ body{
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
+    transition: 0.5s linear;
 }
 
 #wrapper .photo .blood{
