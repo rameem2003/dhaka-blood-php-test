@@ -54,7 +54,8 @@
 <body>
     <section id="wrapper">
         <div class="title">
-            <h1>Hello <?php echo $row['u_name']; ?></h1>
+            <h1 id="greetings"></h1> &nbsp;
+            <h1> <?php echo $row['u_name']; ?></h1>
         </div>
 
         <div class="photo">
@@ -78,13 +79,13 @@
             <div class="box">
                 <h3>Email</h3>
                 <hr>
-                <p><?php echo $row['email'] ?></p>
+                <p><a href="mailto: <?php echo $row['email'] ?>"><?php echo $row['email'] ?></a></p>
             </div>
 
             <div class="box">
                 <h3>Facebook</h3>
                 <hr>
-                <p><?php echo $row['fb'] ?></p>
+                <p><a href="<?php echo $row['fb'] ?>"><?php echo $row['fb'] ?></a></p>
             </div>
 
             <div class="box">
@@ -105,5 +106,9 @@
             <a class="logout logout-color" href="profile.php?logout=<?php echo $user_id; ?>"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         </div>
     </section>
+
+
+    <!-- js -->
+    <script src="./js/greetings.js"></script>
 </body>
 </html>

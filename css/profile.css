@@ -25,6 +25,10 @@ body{
     background-color: skyblue;
     padding: 5px;
     border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     color: black;
 }
 
@@ -115,3 +119,26 @@ body{
     background-color: red;
     color: white;
 }
+
+
+/* responsive */
+@media screen and (max-width: 500px) {
+    #wrapper{
+        width: 90%;
+        padding: 10px;
+    }
+
+    #wrapper .name_details h2{
+        font-size: 20px;
+    }
+
+    #wrapper .others_details .box{
+        width: 90%;
+        overflow: hidden;
+    }
+
+    #wrapper .title{
+        display: block;
+    }
+}
+/* responsive end */
