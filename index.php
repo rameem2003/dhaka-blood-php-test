@@ -36,6 +36,7 @@
                     <li><a href="#members">Our volunteers</a></li>
                     <li><a href="./register.php">Join us</a></li>
                     <li><a href="./login.php">Login</a></li>
+                    <li><a href="./admin-login.php">Admin</a></li>
                 </ul>
             </nav>
         </div>

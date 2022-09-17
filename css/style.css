@@ -62,7 +62,7 @@ header .container{
     justify-content: space-between;
 }
 header .logo{
-    width: 30%;
+    width: 25%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -90,7 +90,7 @@ header .logo img{
 }
 
 header nav{
-    width: 70%;
+    width: 75%;
     display: flex;
     align-items: center;
     justify-content: center;

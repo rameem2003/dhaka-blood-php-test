@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 23, 2022 at 03:47 PM
--- Server version: 10.5.12-MariaDB
--- PHP Version: 7.3.32
+-- Host: 127.0.0.1
+-- Generation Time: Sep 17, 2022 at 05:43 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,8 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `id19143575_dhaka_blood`
+-- Database: `dhaka_blood_bank`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(255) NOT NULL,
+  `admin_user` varchar(255) NOT NULL,
+  `admin_password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `admin_user`, `admin_password`) VALUES
+(1, 'fahmida', '451628'),
+(2, 'rameem', '451638');
 
 -- --------------------------------------------------------
 
@@ -54,18 +73,26 @@ INSERT INTO `donors` (`id`, `f_name`, `l_name`, `u_name`, `dob`, `location`, `do
 (4, 'Region ', 'Mahmud Sayel', 'Region', '1998-10-29', 'Mirpur-1', '2022-05-04', 'A+', 'inbound2102815574.tmp', '01841243927', 'https://www.facebook.com/ria.rito.7', 'mahamudregion@gmail.com', '01841243927'),
 (5, 'Emon', 'Chowdhury ', 'emon.637', '2002-01-30', 'Mirpur', '2022-06-21', 'O+', 'IMG_20220601_175837-02.jpeg', '01731905097', 'https://www.facebook.com/emon.5677', 'nayemhasen3000@gmail.com', 'emon1234'),
 (6, 'Mohammad', 'Sarfaraz Ahmed', 'Olid', '2000-01-08', 'Mirpur 11', '2022-06-04', 'A+', '', '01779121156', 'https://www.facebook.com/olid2019', 'olid1936@gmail.com', 'password121156'),
-(7, 'MD Mahabul', 'Alam', 'MD Mahabul Alam', '2003-03-10', 'Mirpur 13, Dhaka', '2022-01-27', 'B+', 'inbound8645996178205896962.jpg', '01307660195', 'https://www.facebook.com/md.mahabulalom.5458', 'mdmahabulalamerin@gmail.com', 'mahabul12'),
+(7, 'MD Mahabul', 'Alam', 'mahabul', '2003-03-10', 'Mirpur 13, Dhaka', '2022-01-27', 'B+', 'inbound8645996178205896962.jpg', '01307660195', 'https://www.facebook.com/md.mahabulalom.5458', 'mdmahabulalamerin@gmail.com', 'mahabul12'),
 (8, 'Md.', 'Rabbi', 'Rabbi', '2001-07-10', 'South badda ', '2022-04-20', 'O+', 'inbound1763061933542395677.jpg', '01837234904', 'https://www.facebook.com/bipul.hasanrabbi', 'bipulhasanrabbi@gmail.com', '12345'),
 (9, 'Junaid', 'islam', 'junaidislam', '2002-02-13', 'brahmanbaria ', '2021-08-15', 'A+', 'inbound1909809449.jpg', '01647865987', 'https://www.facebook.com/profile.php?id=100008579554493', 'mdjunaidislam629@gmail.com ', 'JUnAid.[668'),
 (10, 'Shourav', 'Shahriar ', 'Md. Shourav', '1997-04-03', 'Tangail', '2022-06-21', 'B+', 'inbound812652157.jpg', '01750498023', 'https://www.facebook.com/shourav.mbd', 'Shahriarshourav23@gmail.com', 'shourav'),
 (11, 'Muhaimin', 'Shihab', 'muhaiminshihab', '2001-04-17', 'Dhaka', '2022-06-01', 'AB+', 'photo.jpeg', '01829004863', 'https://facebook.com/muhaiminshihab', 'hostforshihab@gmail.com', 'shihab123'),
 (12, 'Nazmul', 'Islam', 'nazmul101112', '2001-11-07', 'Mirpur-14, Dhaka-1206', '2022-04-28', 'A+', 'inbound6188951507552945778.jpg', '01959061063', 'https://www.facebook.com/nazmulislam101112', 'nazmulislam101112@gmail.com', 'nazmul00'),
 (13, 'Musfika', 'Nawar', 'Musfika ', '2001-01-21', 'Dohar Nawabganj ', '2022-06-22', 'O+', '', '01936584342', 'https://www.facebook.com/musfika.nawar', 'musfikanawar14@gmail.com', '27881'),
-(14, 'Sagorika akter ', 'Sadia ', 'Sagorika', '2002-07-01', 'Dhaka, Agargaon ', '2022-05-28', 'O-', '', '01891790483', 'https://www.facebook.com/sagorika.akter.9803', 'sagorikaaktersadia@gmail.com', 'sagorika83');
+(14, 'Sagorika akter ', 'Sadia ', 'Sagorika', '2002-07-01', 'Dhaka, Agargaon ', '2022-05-28', 'O-', '', '01891790483', 'https://www.facebook.com/sagorika.akter.9803', 'sagorikaaktersadia@gmail.com', 'sagorika83'),
+(15, 'Rakib', 'Ahmed', 'rakib.11', '2001-04-13', 'Mirpur 13, Dhaka', '2022-08-13', 'AB+', '', '01880157156', 'https://www.facebook.com/AfnanAhmed.RK', 'rakibstr21@gmail.com', 'rakibrakib'),
+(16, 'Abdul', 'Baten', 'baten2003', '2003-03-27', 'Vashantek bazar, Dhaka', '2022-09-17', 'AB+', 'baten.jpg', '01872-86947', 'https://www.facebook.com/AbdulBaten9472', 'abbaten3212000@gmail.com', '451627');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `donors`
@@ -78,10 +105,16 @@ ALTER TABLE `donors`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

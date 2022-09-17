@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+    background-color: gray;
+}
+
+.wrapper{
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    margin: 30px auto;
+    border-radius: 8px;
+}
+
+.wrapper .admin_name, .wrapper .title{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.wrapper .admin_name{
+    margin-bottom: 30px;
+}
+
+.wrapper .list .list_head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper .list .list_head .list_title,
+.wrapper .list .list_head .total{
+    font-size: 25px;
+}
+
+.wrapper .list .doners_list table{
+    margin-top: 40px;
+}
+
+.wrapper .list .doners_list .table .row{
+    padding: 20px 10px;
+    border-radius: 8px;
+    background-color: #dd3d3d;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    /* font-weight: bold; */
+}
+
+.table .row .serial{
+    width: 1%;
+}
+
+.table .row .name{
+    width: 15%;
+}
+
+.table .row .user{
+    width: 15%;
+}
+
+.table .row .phone{
+    width: 10%;
+}
+
+.table .row .loc{
+    width: 20%;
+}
+
+.table .row .blood{
+    width: 8%;
+}
+
+.table .row .email{
+    width: 25%;
+}
+
+.wrapper .logout{
+    text-align: center;
+}
+
+.wrapper .logout a{
+    /* display: block; */
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+

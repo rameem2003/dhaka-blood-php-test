@@ -1,30 +1,26 @@
 <?php 
 
     include './include/configuration.php';
-
     session_start();
-    if(isset($_POST['login'])){
-        $input_email = $_POST["email"];
-        $input_pass = $_POST["pass"];
 
+    if(isset($_POST['submit'])){
+        $admin_user = $_POST['admin_uname'];
+        $admin_pass = $_POST['admin_pass'];
 
-        $login_query = "SELECT * FROM `donors` WHERE email = '$input_email' AND password = '$input_pass'";
+        $login_query = "SELECT * FROM `admin` WHERE admin_user = '$admin_user' AND admin_password = '$admin_pass'";
+
         $run = mysqli_query($conn, $login_query);
 
         if(mysqli_num_rows($run) > 0){
             $row = mysqli_fetch_assoc($run);
-            $_SESSION['user_id'] = $row['id'];
-            header("location:profile.php");
-        }
-        else{
-            $msg[] = "Email or password are invalid!!!";
+            $_SESSION['admin_id'] = $row['id'];
+            header("location:dashboard.php");
+        }else{
+            echo '<script> alert("Something went wrong Admin!"); </script>';
         }
     }
 
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +28,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Admin login || Dhaka Blood Bank</title>
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 
     <!-- local css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/admin-login.css">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,48 +41,22 @@
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-    </style>
 </head>
 <body>
-    <!-- login -->
-    <section id="login">
-        <h1 class="title">Login Here</h1>
-        
-        <?php 
-        
-            if(isset($msg)){
-                foreach($msg as $msg){
-                    echo '<div class="msg">' . $msg . '</div>';
-                }
-            }
-        
-        ?>
+    <div id="login">
+        <h1 class="title">Admin login</h1>
 
         <form action="" method="post">
-            <input type="email" name="email" id="" placeholder="Enter email....." required autocomplete="off">
+            <input type="text" name="admin_uname" id="uname" placeholder="Username">
 
             <div class="password">
-                <input type="password" name="pass" id="pass" placeholder="Enter password...." required>
+                <input type="password" name="admin_pass" id="pass" placeholder="Enter password...." required>
                 <i class="fa-solid fa-eye tog"></i>
             </div>
 
-            <input type="submit" name="login" value="Login">
-
-            <p>Haven't any account <a href="./register.php">Register now</a></p>
-
-            <p><a href="./index.php">Back to home</a></p>
+            <input type="submit" name="submit" value="Login">
         </form>
-    </section>
-    <!-- login end -->
-
+    </div>
 
 
     <!-- js -->
@@ -107,6 +77,5 @@
         })
     </script>
     <!-- js end -->
-
 </body>
 </html>
