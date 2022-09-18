@@ -35,6 +35,14 @@
         header("location:index.php");
     }
 
+    // delete record
+
+    if(isset($_GET['dl'])){
+        $delete_row = $_GET['dl'];
+        $delete_query = "DELETE FROM `donors` WHERE id='$delete_row'";
+        mysqli_query($conn, $delete_query);
+    }
+
 
 
 ?>
@@ -55,6 +63,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="wrapper">
@@ -101,6 +112,7 @@
                                         <div class="loc"><?php echo $row['location']; ?></div>
                                         <div class="blood"><?php echo $row['blood']; ?></div>
                                         <div class="email"><?php echo $row['email']; ?></div>
+                                        <div><a class="trash" href="dashboard.php?dl=<?php echo $row['id'] ?>"><i class="fa-solid fa-trash"></i></a></div>
                                     </div>
 
                                 <?php 
