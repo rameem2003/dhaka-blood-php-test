@@ -47,6 +47,31 @@
 
 ?>
 
+<?php 
+
+    include './include/configuration.php';
+
+    if(isset($_POST['admin_reg'])){
+        $new_admin_user = $_POST['new_admin_user'];
+        $new_admin_pass = $_POST['new_admin_pass'];
+
+        $add_admin = "INSERT INTO `admin`(admin_user, admin_password) VALUES ('$new_admin_user','$new_admin_pass')";
+
+        if(mysqli_query($conn, $add_admin)){
+            echo '<script> alert("New Admin Added Successfully"); </script>';
+
+            header("location:dashboard.php");
+        }else{
+            echo '<script> alert("Somthing Wrong Admin !!!"); </script>';
+        }
+
+        
+
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,8 +94,10 @@
 </head>
 <body>
     <div class="wrapper">
+        <button id="addAdminBtn"><i class="fa-solid fa-user"></i> Add Admin</button>
         <div class="title">
             <h1>Dhaka Blood Bank</h1>
+            <h2>Dashboard</h2>
         </div>
 
         <div class="admin_name">
@@ -134,6 +161,37 @@
         </div>
     </div>
 
+    <section id="admin_regi">
+        <form action="" method="post">
+            <h1>Create a new admin</h1>
+            <button id="closeBtn"><i class="fa-solid fa-circle-xmark"></i></button>
+            <input type="text" name="new_admin_user" id="" placeholder="Create admin user name">
+            <input type="text" name="new_admin_pass" id="" placeholder="Create password">
+            <input type="submit" name="admin_reg" value="Create Account">
+        </form>
+    </section>
+
+
+
+
+    <script>
+        const addAdminBtn = document.getElementById("addAdminBtn");
+        const closeBtn = document.getElementById("closeBtn");
+
+        addAdminBtn.addEventListener("click", () => {
+            const admin_regi = document.getElementById("admin_regi");
+            const wrapper = document.querySelector(".wrapper");
+            admin_regi.classList.toggle("expand");
+            wrapper.classList.toggle("blur");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            const admin_regi = document.getElementById("admin_regi");
+            const wrapper = document.querySelector(".wrapper");
+            admin_regi.classList.remove("expand");
+            wrapper.classList.remove("blur");
+        });
+    </script>
 
 
 </body>
