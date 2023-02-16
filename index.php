@@ -9,6 +9,7 @@
 
     <!-- local css -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,28 +20,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    
     <!-- header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="./index.php">
-                    <img src="./img/logo.png" alt="logo">
-                </a>
-
-                <button id="tog_menu"><i class="fa-solid fa-bars-staggered"></i></button>                
-            </div>
-            <nav id="menu">
-                <ul>
-                    <li><a href="./index.php">Home</a></li>
-                    <li><a href="./about.php">About</a></li>
-                    <li><a href="#members">Our volunteers</a></li>
-                    <li><a href="./register.php" target="_blank">Join us</a></li>
-                    <li><a href="./login.php" target="_blank">Login</a></li>
-                    <li><a href="./admin-login.php" target="_blank">Admin</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <?php include './header.php'; ?>
     <!-- header end -->
 
     <!-- banner -->

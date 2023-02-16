@@ -41,12 +41,14 @@
         $delete_row = $_GET['dl'];
         $delete_query = "DELETE FROM `donors` WHERE id='$delete_row'";
         mysqli_query($conn, $delete_query);
+        header("location:dashboard.php");
     }
 
 
 
 ?>
 
+<!-- add new admin -->
 <?php 
 
     include './include/configuration.php';
@@ -62,7 +64,7 @@
 
             header("location:dashboard.php");
         }else{
-            echo '<script> alert("Somthing Wrong Admin !!!"); </script>';
+            echo '<script> alert("Somtding Wrong Admin !!!"); </script>';
         }
 
         
@@ -77,7 +79,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
     <title>Dashboard || Dhaka Blood Bank</title>
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
 
@@ -95,6 +97,9 @@
 <body>
     <div class="wrapper">
         <button id="addAdminBtn"><i class="fa-solid fa-user"></i> Add Admin</button>
+        <div class="logout">
+            <a href="dashboard.php?logout=<?php echo $admin_id ?>"><i class="fa-solid fa-right-from-bracket"></i> Logout dashboard</a>
+        </div>
         <div class="title">
             <h1>Dhaka Blood Bank</h1>
             <h2>Dashboard</h2>
@@ -112,52 +117,49 @@
             </div>
 
 
-            <div class="doners_list">
-                <div class="table">
-                    <div class="row">
-                        <div class="serial">Sl</div>
-                        <div class="name">Name</div>
-                        <div class="user">User name</div>
-                        <div class="phone">Phone</div>
-                        <div class="loc">Location</div>
-                        <div class="blood">Blood</div>
-                        <div class="email">Email</div>
-                    </div>
-                    
-                    <?php 
 
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>S.N</td>
+                        <td>Name</td>
+                        <td>User name</td>
+                        <td>Phone</td>
+                        <td>Location</td>
+                        <td>Blood</td>
+                        <td>Email</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <?php
 
                         if(mysqli_num_rows($run) > 0){
                             while($row = mysqli_fetch_assoc($run)){
                                 ?>
+                                    <tr>
+                                        <td><?php echo $row['id']; ?></td>
+                                        <td><?php echo $row['f_name'] . " " . $row['l_name']; ?></td>
+                                        <td><?php echo $row['u_name']; ?></td>
+                                        <td><?php echo $row['phone']; ?></td>
+                                        <td><?php echo $row['location']; ?></td>
+                                        <td><?php echo $row['blood'] ?></td>
+                                        <td><?php echo $row['email'] ?></td>
+                                        <td><a class="trash" href="dashboard.php?dl=<?php echo $row['id'] ?>"><i class="fa-solid fa-trash"></i></a> <a class="trash" target="_blank" href="./view_profile.php?viewProfile=<?php echo $row['id']; ?>"><i class="fa-solid fa-eye"></i></a> </td>
+                                    </tr>
 
-                                    <div class="row">
-                                        <div class="serial"><?php echo $row['id']; ?></div>
-                                        <div class="name"><?php echo $row['f_name'] . " " .  $row['l_name']; ?></div>
-                                        <div class="user"><?php echo $row['u_name']; ?></div>
-                                        <div class="phone"><?php echo $row['phone']; ?></div>
-                                        <div class="loc"><?php echo $row['location']; ?></div>
-                                        <div class="blood"><?php echo $row['blood']; ?></div>
-                                        <div class="email"><?php echo $row['email']; ?></div>
-                                        <div><a class="trash" href="dashboard.php?dl=<?php echo $row['id'] ?>"><i class="fa-solid fa-trash"></i></a></div>
-                                    </div>
-
-                                <?php 
+                                <?php
                             }
-
                         }else{
-                            echo "Not Found";
+                            echo "Not found";
                         }
                     
                     ?>
-                    
-
-                </div>
-            </div>
-        </div>
-
-        <div class="logout">
-            <a href="dashboard.php?logout=<?php echo $admin_id ?>">Logout dashboard</a>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -190,6 +192,7 @@
             const wrapper = document.querySelector(".wrapper");
             admin_regi.classList.remove("expand");
             wrapper.classList.remove("blur");
+            
         });
     </script>
 
