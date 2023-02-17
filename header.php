@@ -13,9 +13,9 @@
                 <li><a href="./">Home</a></li>
                 <li><a href="./about.php">About</a></li>
                 <li><a href="./#members">Our volunteers</a></li>
-                <li><a href="./register.php" target="_blank">Join us</a></li>
-                <li><a href="./login.php" target="_blank">Login</a></li>
-                <li><a href="./admin-login.php" target="_blank">Admin</a></li>
+                <li><a href="./register.php">Join us</a></li>
+                <li><a href="./login.php">Login</a></li>
+                <li><a href="./admin-login.php">Admin</a></li>
             </ul>
         </nav>
     </div>

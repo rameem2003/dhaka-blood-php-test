@@ -233,23 +233,49 @@ h1{
 
 #members .members-box .profile .pro-name h4{
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bolder;
 }
 
 #members .members-box .profile .location-blood-date{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* font-size: 15px; */
+    justify-content: center;
 }
 
-#members .members-box .profile .location-blood-datep{
+#members .members-box .profile .location-blood-date p{
     font-size: 15px;
+    text-align: center;
+    display: block;
 }
 #members .members-box .profile .link{
     margin-top: 20px;
+    display: none;
 }
+
+#members .members-box .profile .call{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#members .members-box .profile .call a{
+    font-size: 20px;
+    display: inline-block;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+#members .members-box .profile .call a:last-child{
+    background-color: black;
+}
+
 #members .members-box .profile .link ul{
     list-style-type: none;
     display: flex;
@@ -564,41 +590,6 @@ footer .row .box .flex .des{
         text-align: center;
     }
 
-    header .container{
-        display: block;
-    }
-
-    header .logo{
-        width: 100%;
-    }
-
-    header .logo button{
-        display: initial;
-    }
-
-
-    header nav{
-        width: 100%;
-        height: 0px;
-        opacity: 0;
-        visibility: hidden;
-        transition: height 0.5s;
-    }
-    
-    header nav.active{
-        height: 400px;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    header nav ul{
-        display: block;
-        text-align: center;
-    }
-
-    header nav ul li{
-        margin: 30px 0;
-    }
 
 
 

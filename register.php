@@ -7,6 +7,7 @@
         $lname = $_POST["lname"];
         $uname = $_POST["uname"];
         $dob = $_POST["dob"];
+        $gender = $_POST['gender'];
         $loc = $_POST["loc"];
         $last_blood = $_POST["last_blood"];
         $blood = $_POST["blood"];
@@ -20,7 +21,7 @@
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_folder = 'upload_img/'.$image;
 
-        $insert_data = "INSERT INTO `donors` (f_name, l_name, u_name, dob, location, donate_date, blood, photo, phone, fb, email, password) VALUES('$fname', '$lname', '$uname', '$dob', '$loc', '$last_blood', '$blood', '$image', '$phone', '$fb', '$email', '$pass')";
+        $insert_data = "INSERT INTO `donors` (f_name, l_name, u_name, dob, location, donate_date, blood, photo, phone, fb, email, password, gender) VALUES('$fname', '$lname', '$uname', '$dob', '$loc', '$last_blood', '$blood', '$image', '$phone', '$fb', '$email', '$pass', '$gender')";
 
 
         move_uploaded_file($image_tmp_name, $image_folder);
@@ -100,11 +101,18 @@
                     <label for="dob">Date of birth</label>
                     <input type="date" name="dob" id="dob" required>
 
-                    <label for="loc">Location</label>
-                    <input type="text" name="loc" id="loc" required>
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                    
                 </div>
 
                 <div class="middle">
+                    <label for="loc">Location</label>
+                    <input type="text" name="loc" id="loc" required>
 
                     <label for="last_blood">Last blood donate date</label>
                     <input type="date" name="last_blood" id="last_blood" required>

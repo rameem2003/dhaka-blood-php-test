@@ -32,7 +32,7 @@
     if(isset($_GET['logout'])){
         session_destroy();
         unset($admin_id);
-        header("location:index.php");
+        header("location:./");
     }
 
     // delete record

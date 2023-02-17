@@ -86,14 +86,24 @@
             </div>
 
             <div class="box">
-                <h3>Last Blood Date</h3>
+                <h3>Last Blood Donation Date</h3>
                 <hr>
                 <p><?php echo $row['donate_date'] ?></p>
             </div>
         </div>
 
+        <?php
+
+            if($row['gender'] == "male"){
+                $print_gender = "Him";
+            }else{
+                $print_gender = "Her";
+            }
+        
+        ?>
+
         <div class="call">
-            <a href="">Call him</a>
+            <a href="tel: <?php echo $row['phone'] ?>"><i class="fa-solid fa-phone"></i> Call <?php echo $print_gender ?></a>
         </div>
 
         <!-- <div class="btns">
