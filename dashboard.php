@@ -148,7 +148,7 @@
                                         <td><?php echo $row['location']; ?></td>
                                         <td><?php echo $row['blood'] ?></td>
                                         <td><?php echo $row['email'] ?></td>
-                                        <td><a class="trash" href="dashboard.php?dl=<?php echo $row['id'] ?>"><i class="fa-solid fa-trash"></i></a> <a class="trash" target="_blank" href="./view_profile.php?viewProfile=<?php echo $row['id']; ?>"><i class="fa-solid fa-eye"></i></a> </td>
+                                        <td><a class="trash" href="dashboard.php?dl=<?php echo $row['id'] ?>"><i class="fa-solid fa-trash"></i></a> &nbsp; <a class="trash" target="_blank" href="./view_profile.php?viewProfile=<?php echo $row['id']; ?>"><i class="fa-solid fa-eye"></i></a> </td>
                                     </tr>
 
                                 <?php

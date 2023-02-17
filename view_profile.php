@@ -32,6 +32,15 @@
 
     <!-- fontawesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <body>
     <section id="wrapper">
@@ -81,6 +90,10 @@
                 <hr>
                 <p><?php echo $row['donate_date'] ?></p>
             </div>
+        </div>
+
+        <div class="call">
+            <a href="">Call him</a>
         </div>
 
         <!-- <div class="btns">
