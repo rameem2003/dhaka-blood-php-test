@@ -48,6 +48,7 @@
 
     <!-- local css -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,20 +58,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+        #register{
+            margin-top: 100px;
+            margin-bottom: 50px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
+
+    <!-- header -->
+    <?php include './header.php' ?>
+    <!-- header end -->
+
     <!-- registration -->
     <section id="register">
         <h1 class="title">Register</h1>
@@ -165,6 +166,10 @@
         </form>
     </section>
     <!-- registration end -->
+
+    <!-- footer  -->
+    <?php include './footer.php' ?>
+    <!-- footer end -->
 
 
     <!-- js -->

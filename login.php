@@ -46,16 +46,27 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="./css/header.css">
+
     <style>
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        
+
+        #login{
+            margin-top: 100px;
+            margin-bottom: 50px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
+
+
+    <!-- header -->
+    <?php include './header.php' ?>
+    <!-- header end -->
+
+
     <!-- login -->
     <section id="login">
         <h1 class="title">Login Here</h1>
@@ -87,6 +98,10 @@
     </section>
     <!-- login end -->
 
+    <!-- footer  -->
+    <?php include './footer.php' ?>
+    <!-- footer end -->
+
 
 
     <!-- js -->
@@ -106,6 +121,9 @@
             }
         })
     </script>
+
+    <!-- local js -->
+    <script src="./js/main.js"></script>
     <!-- js end -->
 
 </body>
