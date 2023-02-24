@@ -227,7 +227,7 @@ h1{
     text-align: center;
     display: block;
     height: 50px;
-    width: 230px;
+    width: 280px;
     border: 2px solid black;
     outline: none;
     font-size: 18px;
@@ -383,17 +383,22 @@ h1{
 /* members end */
 
 /* current */
+.current .allRequest{
+    height: 400px;
+    overflow-y: scroll;
+}
 .current li{
     margin-bottom: 30px;
 }
 .current li{
     padding: 10px 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid red;
     list-style-type: none;
 }
 .current p{
     font-size: 22px;
     margin: 10px 0px;
+    color: red;
 }
 /* current end */
 

@@ -58,7 +58,7 @@
                         <!-- <input type="text" name="" id="location" oninput="searchLocation()" placeholder="Enter location"> -->
                         <select name="" id="location" oninput="searchLocation()">
                             <option value="" selected disabled>---Select Location---</option>
-                            <?php 
+                            <!-- <?php 
                             include './include/configuration.php';
 
                             $get_all_location = mysqli_query($conn, "SELECT * FROM `donors`");
@@ -69,7 +69,7 @@
                                     <?php
                                 }
                             }
-                            ?>
+                            ?> -->
                         </select>
                     </div>
                 </div>
@@ -150,6 +150,27 @@
     <!-- local js -->
     <script src="./js/search_engine.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+        fetch('js/area.json').then(response => response.json()).then(data => {
+            let area_select_memberpage = document.getElementById("location");
+            // let option = "";
+            let allArea = data.area.sort();
+
+            // for(a = 0; a<allArea.length; a++){
+            //     option = option + `<option value="${allArea[a]}">${allArea[a]}</option>`;
+
+            // }
+
+            // area_select_memberpage.appendChild(option);
+
+            allArea.forEach(area => {
+                let option = document.createElement("option");
+                option.text = area;
+                option.value = area;
+                area_select_memberpage.appendChild(option)
+            })
+        })
+    </script>
 </body>
 </html>
 

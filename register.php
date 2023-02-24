@@ -113,7 +113,8 @@
 
                 <div class="middle">
                     <label for="loc">Location</label>
-                    <input type="text" name="loc" id="loc" required>
+                    <!-- <input type="text" name="loc" id="loc" required> -->
+                    <select name="loc" id="loc" required></select>
 
                     <label for="last_blood">Last blood donate date</label>
                     <input type="date" name="last_blood" id="last_blood" required>
@@ -202,8 +203,20 @@
             }
 
         })
-    </script>
 
+        fetch('js/area.json').then(response => response.json()).then(data => {
+            let area_select_registerpage = document.getElementById("loc");
+            let option = "";
+            let allArea = data.area.sort();
+
+            for(a = 0; a<allArea.length; a++){
+                option = option + `<option value="${allArea[a]}">${allArea[a]}</option>`;
+
+            }
+
+            area_select_registerpage.innerHTML = option;
+        })
+    </script>
     <script src="./js/main.js"></script>
     <!-- js end -->
 </body>

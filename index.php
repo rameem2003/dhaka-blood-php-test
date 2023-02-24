@@ -236,7 +236,7 @@ if(isset($_POST['request'])){
                 if(mysqli_num_rows($fetch_request) > 0){
                     while($fetch_row = mysqli_fetch_assoc($fetch_request)){
                         ?>
-                        <li><p><?php echo $fetch_row['id'] ?>. <?php echo $fetch_row['blood_group'] ?> <?php echo $fetch_row['name'] ?> <?php echo $fetch_row['phone'] ?> (<?php echo $fetch_row['unit'] ?> bag blood needed) - (<?php echo $fetch_row['time'] ?>) <?php echo $fetch_row['date'] ?> at <?php echo $fetch_row['area'] ?>.</p></li>
+                        <li><p><?php echo $fetch_row['id'] ?>. <?php echo $fetch_row['blood_group'] ?> <?php echo $fetch_row['name'] ?> <?php echo $fetch_row['phone'] ?> (<?php echo $fetch_row['unit'] ?> bag blood needed) - (<?php echo $fetch_row['time'] ?>) <?php echo $fetch_row['date'] ?> at <?php echo $fetch_row['hospital']; ?> <?php echo $fetch_row['area'] ?>.</p></li>
                         <?php
                     }
                 }
@@ -304,7 +304,7 @@ if(isset($_POST['request'])){
                         </div>
 
                         <div class="form-row">
-                            <label for="">Area (Currently Only Dhaka North City ) *</label>
+                            <label for="">Area (Only Dhaka City) *</label>
                             <!-- <input type="text" name="area" id="" required> -->
                             <select name="area" id="area_select"></select>
                         </div>
@@ -332,6 +332,20 @@ if(isset($_POST['request'])){
 
     <!-- local js -->
     <script src="./js/main.js"></script>
-    <script src="./js/area.js"></script>
+    <script>
+        fetch('js/area.json').then(response => response.json()).then(data => {
+            let area_select_homepage = document.getElementById("area_select");
+            // console.log(data.area.length);
+            let option = "";
+            let allArea = data.area.sort();
+
+            for(a = 0; a<allArea.length; a++){
+                option = option + `<option value="${allArea[a]}">${allArea[a]}</option>`;
+
+            }
+
+            area_select_homepage.innerHTML = option;
+        })
+    </script>
 </body>
 </html>
