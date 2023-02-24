@@ -203,6 +203,8 @@
 
         })
     </script>
+
+    <script src="./js/main.js"></script>
     <!-- js end -->
 </body>
 </html>

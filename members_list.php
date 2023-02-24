@@ -47,6 +47,12 @@
                             <option value="O-">O-</option>
                         </select>
                     </div>
+
+
+                    <div class="middle">
+                        <p>OR</p>
+                    </div>
+
                     <div class="right">
                         <p>Location</p>
                         <!-- <input type="text" name="" id="location" oninput="searchLocation()" placeholder="Enter location"> -->
@@ -143,6 +149,7 @@
 
     <!-- local js -->
     <script src="./js/search_engine.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
 

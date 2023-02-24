@@ -214,6 +214,12 @@ h1{
     font-weight: bold;
 }
 
+#members .search_engine .row .middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #members .search_engine .row .left select,
 #members .search_engine .row .right select{
     margin: 0 auto;
@@ -375,6 +381,80 @@ h1{
     font-weight: bold;
 }
 /* members end */
+
+/* current */
+.current li{
+    margin-bottom: 30px;
+}
+.current li{
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    list-style-type: none;
+}
+.current p{
+    font-size: 22px;
+    margin: 10px 0px;
+}
+/* current end */
+
+/* request */
+
+.request{
+    border: 2px solid black;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+.request .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.request .row .left,
+.request .row .right{
+    width: 50%;
+}
+
+.request .row .left img{
+    max-width: 100%;
+}
+
+.request .row .right form{
+    width: 100%;
+    padding: 10px;
+    /* margin: 10px; */
+    border: 2px solid black;
+}
+
+.request .row .right form label{
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+}
+
+.request .row .right form input, select{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.request .row .right form input:focus,
+.request .row .right form select:focus{
+    border: 2px solid red;
+}
+
+
+.request .row .right form input[type="submit"]{
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
+
+/* request end */
 
 
 
@@ -714,6 +794,18 @@ footer .row .box .flex .des{
         margin: 20px auto;
     }
 
+    #members .search_engine{
+        margin-top: 50px;
+    }
+
+    #members .search_engine .row{
+        display: block;
+    }
+
+    #members .search_engine .row .left,
+    #members .search_engine .row .right{
+        width: 100%;
+    }
 
     #members .members-box{
         display: block;

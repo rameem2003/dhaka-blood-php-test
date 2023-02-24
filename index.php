@@ -1,3 +1,24 @@
+<?php
+
+include './include/configuration.php';
+
+if(isset($_POST['request'])){
+    $name = $_POST['name'];
+    $hospital = $_POST['hospital'];
+    $phone = $_POST['phone'];
+    $unit = $_POST['unit'];
+    $blood = $_POST['blood'];
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+    $area = $_POST['area'];
+    $address = $_POST['address'];
+
+    $send_request = "INSERT INTO `request`(name, hospital, phone, unit, blood_group, date, `time`, area, address) VALUES ('$name','$hospital','$phone','$unit','$blood','$date','$time','$area','$address')";
+
+    mysqli_query($conn, $send_request);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -202,6 +223,107 @@
     </div>
     <!-- members end -->
 
+    <!-- current request -->
+    <div class="current">
+        <div class="container">
+            <h1 class="title center">Current blood request</h1>
+
+            <div class="allRequest">
+                <?php 
+                include './include/configuration.php';
+
+                $fetch_request = mysqli_query($conn, "SELECT * FROM `request`");
+                if(mysqli_num_rows($fetch_request) > 0){
+                    while($fetch_row = mysqli_fetch_assoc($fetch_request)){
+                        ?>
+                        <li><p><?php echo $fetch_row['id'] ?>. <?php echo $fetch_row['blood_group'] ?> <?php echo $fetch_row['name'] ?> <?php echo $fetch_row['phone'] ?> (<?php echo $fetch_row['unit'] ?> bag blood needed) - (<?php echo $fetch_row['time'] ?>) <?php echo $fetch_row['date'] ?> at <?php echo $fetch_row['area'] ?>.</p></li>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+    <!-- current request end -->
+
+
+    <!-- request for blood -->
+    <div class="request">
+        <div class="container">
+            <h1 class="title center">Request for blood</h1>
+
+            <div class="row">
+                <div class="left">
+                    <img src="./img/undraw_navigation_re_wxx4.svg" alt="">
+                </div>
+                <div class="right">
+                    <form action="" method="post">
+                        <div class="form-row">
+                            <label for="">Patient Name *</label>
+                            <input type="text" name="name" id="" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Hospital Name *</label>
+                            <input type="text" name="hospital" id="" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Phone Number *</label>
+                            <input type="text" name="phone" id="" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Unit / Blood Bag ? *</label>
+                            <input type="number" name="unit" id="" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Blood Gruop *</label>
+                            <select name="blood" id="" required>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-row">
+                            <label for="">Donation Date *</label>
+                            <input type="date" name="date" id="" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Donation Time *</label>
+                            <input type="time" name="time" id="" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Area (Currently Only Dhaka North City ) *</label>
+                            <!-- <input type="text" name="area" id="" required> -->
+                            <select name="area" id="area_select"></select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="">Address *</label>
+                            <input type="text" name="address" id="" required>
+                        </div>
+
+                        <input type="submit" name="request" value="Request For Blood">
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- request for blood end -->
+
 
     <!-- footer -->
     <?php include './footer.php' ?>
@@ -210,5 +332,6 @@
 
     <!-- local js -->
     <script src="./js/main.js"></script>
+    <script src="./js/area.js"></script>
 </body>
 </html>
