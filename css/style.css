@@ -189,7 +189,49 @@ h1{
 
 /* members */
 #members{
-    margin: 30px 0;
+    margin: 100px 0;
+}
+
+#members .search_engine h2{
+    text-align: center;
+}
+
+#members .search_engine .row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#members .search_engine .row .left,
+#members .search_engine .row .right{
+    width: 40%;
+    margin: 0 auto;
+}
+
+#members .search_engine .row p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#members .search_engine .row .left select,
+#members .search_engine .row .right select{
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    height: 50px;
+    width: 230px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#members .search_engine .row .left select:focus,
+#members .search_engine .row .right select:focus{
+    border: 2px solid #FF0000;
 }
 
 #members .members-box{
@@ -317,6 +359,20 @@ h1{
 
 #members .members-box .profile .link ul li a:hover{
     background-color: red;
+}
+
+#members .btn{
+    display: block;
+    width: 15%;
+    text-align: center;
+    background-color: yellow;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 10px auto;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
 }
 /* members end */
 
