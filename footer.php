@@ -52,6 +52,10 @@
                 <p>Developed by:</p>
                 <h3>Mahmood Hassan Rameem</h3>
                 <h4>01409029641</h4>
+
+                <p>Supported by:</p>
+                <h3>Fahmida Yeasmin</h3>
+                <h4>01828810843</h4>
             </div>
 
         </div>
