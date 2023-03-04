@@ -821,6 +821,19 @@ footer .row .box .flex .des{
         margin: 20px auto;
     }
 
+    #members .btn{
+        width: 55%;
+    }
+
+    .request .row{
+        display: block;
+    }
+
+    .request .row .left,
+    .request .row .right{
+        width: 100%;
+    }
+
 
     footer .row{
         display: block;
